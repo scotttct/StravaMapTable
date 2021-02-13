@@ -1,17 +1,17 @@
-const auth_link = "https://www.strava.com/oauth/token"
-var myArray = []
+const auth_link2 = "https://www.strava.com/oauth/token"
+var athData = []
 var athleteId = "290084"
 
 function getAthlete(res){
 
-    const activities_link = `https://www.strava.com/api/v3/athletes/290084?access_token=${res.access_token}`
+    const activities_link = `https://www.strava.com/api/v3/athletes/${athleteId}?access_token=${res.access_token}`
     fetch(activities_link)
         .then((res) => res.json())
         .then(function (data){
             console.log(data)
-            myArray = data
-             athleteData(myArray)
-            
+            athData = data
+             athleteData(athData)
+            console.log(athData)
 
 
             
@@ -35,7 +35,7 @@ function getAthlete(res){
 
     
 function reAuthorize() {
-    fetch(auth_link, {
+    fetch(auth_link2, {
         method: 'post',
 
         headers: {

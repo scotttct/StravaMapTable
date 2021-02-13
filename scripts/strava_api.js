@@ -8,7 +8,9 @@ function getActivites(res){
         .then((res) => res.json())
         .then(function (data){
             myArray = data
-             buildTable(myArray)
+            
+            buildTable(myArray)
+             
             console.log(myArray)
 
             var map = L.map('map').setView([27.0994444, -82.4544444], 10);
@@ -59,6 +61,8 @@ function getActivites(res){
 
     }
 }
+
+
 
 
     
