@@ -7,4 +7,3 @@ Strava Map Tables is a web app that uses the Strava API to pull data from activi
     add graphs, and about/contact pages.
     need to finish index page -> need to get the profile data onto the index page and compact the js pages.
         -had to change a couple variable names in the athlete.js to make the profile data function work.
-    
