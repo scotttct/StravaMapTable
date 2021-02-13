@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
     crossorigin=""></script>
-    <script src="scripts/Polyline.encoded.js"></script>
+   
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -36,43 +36,33 @@
               </class>
           </div>
         </div>
+
       </div>
       <nav class="navbar navbar-expand-sm bg-info navbar-dark">
         <!-- Brand/logo -->
-        <a class="navbar-brand" href="#">ST-Activities</a>
+        <a class="navbar-brand" href="index.html">ST-Activities</a>
         
         <!-- Links -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Link 1</a>
+            <a class="nav-link" href="YTD.html">YTD</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link 2</a>
+            <a class="nav-link" href="graphs.html">graphs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link 3</a>
+            <a class="nav-link" href="about.html">About/Contact</a>
           </li>
         </ul>
       </nav>
       <div class="container-fluid">
+          
         <class class="row">
-            <div  id="map" class="col-sm-6" style="background-color:lightgray;"></div>
+            <div class="col-sm-6" style="background-color:lightgray;">
+              
+            </div>
             <div class="col-sm-6" style="background-color:lightgrey;">
-                <h1>Table of Recent Rides</h1>
-                <table class="table table-striped">
-                    <tr  class="bg-info">
-                        <th>Name</th>
-                        <th>Date</th>
-                        <th>Distance</th>
-                        <th>Type</th>
-                        <th>Avg Cadence</th>
-                        
-                    </tr>
-                
-                    <tbody id="ActTable">
-                        
-                    </tbody>
-                </table>
+               
         </div>
           </class>
       </div>
@@ -95,8 +85,7 @@
       </div>
 
 
-<script src=scripts/strava_api.js></script>
-<script src="scripts/athlete.js"></script>
+<script src=scripts/athlete.js></script>
 
 </body>
 

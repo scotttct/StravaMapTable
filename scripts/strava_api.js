@@ -1,12 +1,15 @@
 const auth_link = "https://www.strava.com/oauth/token"
+var myArray = []
 
 function getActivites(res){
-    // myArray[];
 
     const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${res.access_token}`
     fetch(activities_link)
         .then((res) => res.json())
         .then(function (data){
+            myArray = data
+             buildTable(myArray)
+            console.log(myArray)
 
             var map = L.map('map').setView([27.0994444, -82.4544444], 10);
 
@@ -15,11 +18,12 @@ function getActivites(res){
             }).addTo(map);
 
             for(var x=0; x<data.length; x++){
-
-                // myArray = (data[x])
+                //Mapping Lat Longs on Lieflet Map
+                console.log(data[x].map.summary_polyline)
 
                 var coordinates = L.Polyline.fromEncoded(data[x].map.summary_polyline).getLatLngs()
-                // console.log(coordinates)
+                console.log(coordinates)
+
 
                 L.polyline(
 
@@ -33,10 +37,29 @@ function getActivites(res){
 
                 ).addTo(map)
             }
+    })
+       
+ }
+        
+ function buildTable(data){
+    var table = document.getElementById('ActTable')
 
-        }
-        )
+    for (var i = 0; i < data.length; i++){
+        
+
+        var row = `<tr>
+                        <td>${data[i].name}</td>
+                        <td>${data[i].start_date_local}</td>
+                        <td>${data[i].distance * 0.000621371.toFixed(3)}</td>
+                        <td>${data[i].type}</td>
+                        <td>${data[i].average_cadence}</td>
+                  </tr>`
+        table.innerHTML += row
+
+
+    }
 }
+
 
     
 function reAuthorize() {
