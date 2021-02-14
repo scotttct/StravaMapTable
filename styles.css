@@ -9,3 +9,18 @@ body{
 
     text-align: center;
 }
+.jumbotron {
+    margin-bottom: 0px;
+ }
+#stravaImg {
+    height: 50%;
+    width: auto;
+}
+
+#footerText {
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size:larger;
+    text-align:center;
+    font-weight: bold;
+    padding-top:10px;
+}

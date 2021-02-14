@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Strava Mapping Rides</title>
+    <title>St Activities</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -15,29 +15,29 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
     crossorigin=""></script>
-   
+    <script src="scripts/Polyline.encoded.js"></script>
     <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
-    <div class="jumbotron jumbotron-fluid">
+  <header>
+    <div class="jumbotron jumbotron-fluid bg-info">
         <div class="container-fluid">
-          <h1>Strava Map for Recent Rides</h1>      
-          <p>Pulling data from Strava's API and Posting it on Map from a series of Strava API tutorials on Youtube by Franchyze923. </p>
-          <div class="container">
-          
-            <class class="row">
-                <div class="col-sm-2 text-md-center " style="background-color:lightgray;">
-                  <img id="profilePic" src="" alt="athlete's photo">
-                </div>
-                <div class="col-sm-9 text-center pt-4" style="background-color:lightgray;">
-                   <h2 class="text-sm-left text-info" id="Fname"></h2>
-            </div>
-              </class>
-          </div>
+          <h1>ST-Activities from the Strava API</h1>      
+          <p>Pulling an Athlete's data from the Strava's API. </p>
         </div>
-
       </div>
+          <div class="container-fluid" >
+            <div class="row">
+                <div class="col-5 p-1 text-right pr-0 " style="background-color:lightgray;">
+                  <img class="text-right" id="profilePic" src="" alt="athlete's photo" style="height: 75%; width:auto;" >
+                </div>
+                <div class="col-7 text-left pt-4 pl-2" style="background-color:lightgray;">
+                   <h2 class="text-left text-info" id="Fname"></h2>
+               </div>
+             </div>
+            </div>
+      
       <nav class="navbar navbar-expand-sm bg-info navbar-dark">
         <!-- Brand/logo -->
         <a class="navbar-brand" href="index.html">ST-Activities</a>
@@ -55,37 +55,31 @@
           </li>
         </ul>
       </nav>
+    </header>
       <div class="container-fluid">
-          
-        <class class="row">
-            <div class="col-sm-6" style="background-color:lightgray;">
-              
-            </div>
-            <div class="col-sm-6" style="background-color:lightgrey;">
-               
-        </div>
-          </class>
+     Content goes here.
       </div>
     
-      <div class="jumbotron text-center" style="margin-bottom:0">
-        <div class="container-fluid " >
+      <footer >
+        <div class="container-fluid p-3 " >
           
             <div class="row">
               <div class="col" >
-
+                <p id="footerText" class="text-info">&copy Richard Tomassetti 2021</p>
               </div>
               <div class="col" >
-                <img src="download.png" alt="strava logo">
+                <img id="stravaImg" src="img/download.png" alt="strava logo">
               </div>
               <div class="col" >.
-
+                <a id="footerText" class="text-info " href="acknowledgements.html">Acknowledgements</a>
               </div>
             </div>
           </div>
-      </div>
+      </footer>
 
 
 <script src=scripts/athlete.js></script>
+
 
 </body>
 
