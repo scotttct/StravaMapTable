@@ -24,3 +24,14 @@ body{
     font-weight: bold;
     padding-top:10px;
 }
+
+.footer {
+    background-color: #5bc0de;
+    color: white;
+
+}
+
+.card-header {
+    font-size:larger;
+    font-weight: bolder;
+}
