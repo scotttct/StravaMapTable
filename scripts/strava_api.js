@@ -3,7 +3,7 @@ var myArray = []
 
 function getActivites(res){
 
-    const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${res.access_token}`
+    const activities_link = `https://www.strava.com/api/v3/athlete/activities?per_page=10&access_token=${res.access_token}`
     fetch(activities_link)
         .then((res) => res.json())
         .then(function (data){
