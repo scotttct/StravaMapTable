@@ -28,9 +28,13 @@ function getAllTimeData(res){
     console.log(ltrd)
 
     var mTime = `${data.all_ride_totals.moving_time}`
-   
-    document.querySelector("#ATMovTime").innerText = mTime
-    console.log(mTime)
+
+    var mdate = new Date(null);
+    mdate.setSeconds(mTime); // specify value for SECONDS here
+    var result = mdate.toISOString().substr(11, 8);
+
+    document.querySelector("#ATMovTime").innerText = result
+    console.log(result)
 
 }
 

@@ -10,8 +10,7 @@ function getActivites(res){
             myArray = data
             
             buildTable(myArray)
-             
-            console.log(myArray)
+            console.log(myArray.id)
 
             var map = L.map('map').setView([27.0994444, -82.4544444], 10);
 

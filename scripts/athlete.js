@@ -2,13 +2,18 @@ const auth_link2 = "https://www.strava.com/oauth/token"
 var athData = []
 var athleteId = "290084"
 
+function getAthleteId(res) {
+    const getID_link = ``
+}
+
+
 function getAthlete(res){
 
     const activities_link = `https://www.strava.com/api/v3/athletes/${athleteId}?access_token=${res.access_token}`
     fetch(activities_link)
         .then((res) => res.json())
         .then(function (data){
-            console.log(data)
+            console.log("Athlete's ID " + data.id)
             athData = data
              athleteData(athData)
             console.log(athData)
