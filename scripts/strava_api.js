@@ -54,6 +54,7 @@ function getActivites(res){
                         <td>${data[i].distance * 0.000621371.toFixed(3)}</td>
                         <td>${data[i].type}</td>
                         <td>${data[i].average_cadence}</td>
+                        <td>${data[i].weighted_average_watts}</td>
                   </tr>`
         table.innerHTML += row
 
