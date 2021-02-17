@@ -1,0 +1,30 @@
+{
+  "name": "st-activities",
+  "version": "1.0.0",
+  "description": "Uses the Strava API to place routes on maps, create tables of recent activities, ect",
+  "main": "app.js",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scotttct/StravaMapTa.git"
+  },
+  "keywords": [
+    "strava",
+    "api",
+    "strava",
+    "api",
+    "leiflet"
+  ],
+  "author": "Richard Tomassetti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scotttct/StravaMapTa/issues"
+  },
+  "homepage": "https://github.com/scotttct/StravaMapTa#readme"
+}
