@@ -1,0 +1,4 @@
+Your current position is:
+(index):33 Latitude : 27.0958592
+(index):34 Longitude: -82.4344576
+(index):35 More or less 3221 meters.

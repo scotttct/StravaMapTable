@@ -11,6 +11,8 @@ body{
 }
 .jumbotron {
     margin-bottom: 0px;
+    padding-bottom: 10px;
+    padding-bottom: 10px;
  }
 #stravaImg {
     height: 50%;
@@ -28,10 +30,16 @@ body{
 .footer {
     background-color: #5bc0de;
     color: white;
+   
 
 }
 
 .card-header {
     font-size:larger;
     font-weight: bolder;
+}
+
+#chartContainer {
+    height: 400px;
+    width: 400px;
 }

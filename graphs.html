@@ -8,13 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin=""/>
-
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script src="scripts/Polyline.encoded.js"></script>
     <link rel="stylesheet" href="styles.css">
 
@@ -22,22 +16,11 @@
 <body>
   <header>
     <div class="jumbotron jumbotron-fluid bg-info">
-        <div class="container-fluid">
+        <div class="container-fluid ">
           <h1>ST-Activities from the Strava API</h1>      
-          <p>Pulling an Athlete's data from the Strava's API. </p>
+          <p>Graphing Average Watts </p>
         </div>
-      </div>
-          <div class="container-fluid" >
-            <div class="row">
-                <div class="col-5 p-1 text-right pr-0 " style="background-color:lightgray;">
-                  <img class="text-right" id="profilePic" src="" alt="athlete's photo" style="height: 75%; width:auto;" >
-                </div>
-                <div class="col-7 text-left pt-4 pl-2" style="background-color:lightgray;">
-                   <h2 class="text-left text-info" id="Fname"></h2>
-               </div>
-             </div>
-            </div>
-      
+      </div>      
       <nav class="navbar navbar-expand-sm bg-info navbar-dark">
         <!-- Brand/logo -->
         <a class="navbar-brand" href="index.html">ST-Activities</a>
@@ -45,10 +28,10 @@
         <!-- Links -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="YTD.html">YTD</a>
+            <a class="nav-link" href="YTD.html">All Time</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="graphs.html">graphs</a>
+            <a class="nav-link" href="graphs.html">Graphs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html">About/Contact</a>
@@ -56,29 +39,29 @@
         </ul>
       </nav>
     </header>
-      <div class="container-fluid">
-     Content goes here.
+      <div id="chartContainer" class="container">
+        <canvas id="wattChart" width="400" height="400" ></canvas>
       </div>
     
       <footer >
-        <div class="container-fluid p-3 " >
+        <div class="container-fluid p-3 bg-info " >
           
-            <div class="row">
+            <div class="row pb-0">
               <div class="col" >
-                <p id="footerText" class="text-info">&copy Richard Tomassetti 2021</p>
+                <p id="footerText" class="text-white">&copy Richard Tomassetti 2021</p>
               </div>
               <div class="col" >
                 <img id="stravaImg" src="img/download.png" alt="strava logo">
               </div>
               <div class="col" >.
-                <a id="footerText" class="text-info " href="acknowledgements.html">Acknowledgements</a>
+                <a id="footerText" class="text-white " href="acknowledgements.html">Acknowledgements</a>
               </div>
             </div>
           </div>
       </footer>
 
-
 <script src=scripts/athlete.js></script>
+<script src=scripts/charts.js></script>
 
 
 </body>

@@ -1,9 +1,10 @@
 const auth_link2 = "https://www.strava.com/oauth/token"
 var athData = []
-var athleteId = "290084"
+// var athleteId = "290084"
+var athleteId = localStorage.getItem("AthID")
 
 function getAthleteId(res) {
-    const getID_link = ``
+    
 }
 
 
@@ -26,6 +27,8 @@ function getAthlete(res){
         
  function athleteData(data){
    
+    var athleteID = `${data.id}`
+    localStorage.setItem("AthID", athleteID)
 
     var name =` ${data.firstname}  ${data.lastname}`
      document.getElementById('Fname').innerHTML = "Athlete: " + name

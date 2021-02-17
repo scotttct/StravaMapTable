@@ -1,3 +1,4 @@
+
 const auth_link = "https://www.strava.com/oauth/token"
 var myArray = []
 
@@ -7,12 +8,15 @@ function getActivites(res){
     fetch(activities_link)
         .then((res) => res.json())
         .then(function (data){
-            myArray = data
-            
+  
+            myArray = data 
+            console.log(myArray)
             buildTable(myArray)
-            console.log(myArray.id)
-
-            var map = L.map('map').setView([27.0994444, -82.4544444], 10);
+            
+            
+            
+            
+            var map = L.map('map').setView([27.0958592, -82.4344576], 10);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -20,7 +24,7 @@ function getActivites(res){
 
             for(var x=0; x<data.length; x++){
                 //Mapping Lat Longs on Lieflet Map
-                console.log(data[x].map.summary_polyline)
+                // console.log(data[x].map.summary_polyline)
 
                 var coordinates = L.Polyline.fromEncoded(data[x].map.summary_polyline).getLatLngs()
                 console.log(coordinates)
@@ -43,10 +47,15 @@ function getActivites(res){
  }
         
  function buildTable(data){
+     
     var table = document.getElementById('ActTable')
 
     for (var i = 0; i < data.length; i++){
-        
+
+        //Get userID and set local storage 
+        AthleID = `${data[0].athlete.id}`
+        localStorage.getItem("athID", AthleID)
+        console.log(AthleID)
 
         var row = `<tr>
                         <td>${data[i].name}</td>
@@ -57,7 +66,6 @@ function getActivites(res){
                         <td>${data[i].weighted_average_watts}</td>
                   </tr>`
         table.innerHTML += row
-
 
     }
 }

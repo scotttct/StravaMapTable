@@ -25,11 +25,15 @@
         <div class="container-fluid">
           <h1>ST-Activities from the Strava API</h1>      
           <p>Pulling an Athlete's data from the Strava's API. </p>
+          <div>
+            <button class="btn btn-info" id='signin' onclick>Sign in here</button>
+          </div>
         </div>
       </div>
           <div class="container-fluid" >
             <div class="row">
                 <div class="col-5 p-1 text-right pr-0 " style="background-color:lightgray;">
+                 
                   <img class="text-right" id="profilePic" src="" alt="athlete's photo" style="height: 75%; width:auto;" >
                 </div>
                 <div class="col-7 text-left pt-4 pl-2" style="background-color:lightgray;">
@@ -57,7 +61,7 @@
       </nav>
     </header>
       <div class="container-fluid">
-     Content goes here.
+        <div id="AthID"></div>
       </div>
     
       <footer >
@@ -78,8 +82,54 @@
       </footer>
 
 
-<script src=scripts/athlete.js></script>
+<script>
 
+// function storageAvailable(type) {
+//     var storage;
+//     try {
+//         storage = window[type];
+//         var x = '__storage_test__';
+//         storage.setItem(x, x);
+//         storage.removeItem(x);
+//         return true;
+//     }
+//     catch(e) {
+//         return e instanceof DOMException && (
+//             // everything except Firefox
+//             e.code === 22 ||
+//             // Firefox
+//             e.code === 1014 ||
+//             // test name field too, because code might not be present
+//             // everything except Firefox
+//             e.name === 'QuotaExceededError' ||
+//             // Firefox
+//             e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+//             // acknowledge QuotaExceededError only if there's something already stored
+//             (storage && storage.length !== 0);
+//     }
+// }
+
+// if (storageAvailable('localStorage')) {
+//   console.log('Yippee! We can use localStorage awesomeness');
+// }
+// else {
+//   console.log("Shit we cannot use local storage")
+// }
+
+localStorage.setItem('athID', 33333);
+
+  const athleteId = localStorage.getItem('athID');
+
+  document.getElementById('AthID').innerText = athleteId
+
+</script>
+<script>
+  document.getElementById("signin").onclick = function() {myFunction()};
+  
+  function myFunction() {
+    window.location.href = "https://www.strava.com/oauth/authorize?clientid=";
+  }
+  </script>
 
 </body>
 
