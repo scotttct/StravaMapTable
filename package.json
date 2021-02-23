@@ -4,15 +4,16 @@
   "description": "Uses the Strava API to place routes on maps, create tables of recent activities, ect",
   "main": "app.js",
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "@mapbox/polyline": "^1.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scotttct/StravaMapTa.git"
+    "url": "git+https://github.com/scotttct/StravaMapTable.git"
   },
   "keywords": [
     "strava",
@@ -24,7 +25,7 @@
   "author": "Richard Tomassetti",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/scotttct/StravaMapTa/issues"
+    "url": "https://github.com/scotttct/StravaMapTable/issues"
   },
-  "homepage": "https://github.com/scotttct/StravaMapTa#readme"
+  "homepage": "https://github.com/scotttct/StravaMapTable#readme"
 }
