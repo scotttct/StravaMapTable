@@ -27,8 +27,8 @@ function getAthlete(res){
         
  function athleteData(data){
    
-    var athleteID = `${data.id}`
-    localStorage.setItem("AthID", athleteID)
+    // var athleteID = `${data.id}`
+    // localStorage.setItem("AthID", athleteID)
 
     var name =` ${data.firstname}  ${data.lastname}`
      document.getElementById('Fname').innerHTML = "Athlete: " + name
