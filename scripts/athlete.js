@@ -1,11 +1,11 @@
 const auth_link2 = "https://www.strava.com/oauth/token"
-var athData = []
-// var athleteId = "290084"
-var athleteId = localStorage.getItem("AthID")
+let athData = [] 
+const athleteId = "290084"
+// var athleteId = localStorage.getItem("AthID")
 
-function getAthleteId(res) {
+// function getAthleteId(res) {
     
-}
+// }
 
 
 function getAthlete(res){
