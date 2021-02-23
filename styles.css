@@ -32,6 +32,10 @@ body{
     color: white;
 }
 
+#infoBody {
+    height: 250px;
+}
+
 .card-header {
     font-size:larger;
     font-weight: bolder;

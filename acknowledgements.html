@@ -8,14 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin=""/>
-
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin=""></script>
-    <script src="scripts/Polyline.encoded.js"></script>
+   
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -23,14 +16,15 @@
   <header>
     <div class="jumbotron jumbotron-fluid bg-info">
         <div class="container-fluid">
-          <h1>ST-Activities from the Strava API</h1>      
-          <p>Pulling an Athlete's data from the Strava's API. </p>
-          <div>
+          <h1>ST-Activities from the Strava API</h1> 
+          <h2>Acknowledgements</h2>     
+          <p> </p>
+          <!-- <div>
             <button class="btn btn-info" id='signin' onclick>Sign in here</button>
-          </div>
+          </div> -->
         </div>
       </div>
-          <div class="container-fluid" >
+          <!-- <div class="container-fluid" >
             <div class="row">
                 <div class="col-5 p-1 text-right pr-0 " style="background-color:lightgray;">
                  
@@ -40,7 +34,7 @@
                    <h2 class="text-left text-info" id="Fname"></h2>
                </div>
              </div>
-            </div>
+            </div> -->
       
       <nav class="navbar navbar-expand-sm bg-info navbar-dark">
         <!-- Brand/logo -->
@@ -61,75 +55,48 @@
       </nav>
     </header>
       <div class="container-fluid">
-        <div id="AthID"></div>
+        <div>
+          <h3>Resourses Used</h3>
+          <ul class="text-left">
+            <li >
+              Strava API Documentation: <a href="https://developers.strava.com/">https://developers.strava.com/</a>
+            </li>
+            <li>
+             Franchyze923 YouTube Channel <a href="https://www.youtube.com/channel/UCgaEcHjTM9OLE3I8zVDSM2Q">https://www.youtube.com/channel/UCgaEcHjTM9OLE3I8zVDSM2Q</a>
+            </li>
+            <li>
+              Coding Journal's Video: <a href="https://www.youtube.com/watch?v=DSlUGncFxa4">https://www.youtube.com/watch?v=DSlUGncFxa4</a> 
+            </li>
+            <li>
+              The Coding Train: <a href="https://thecodingtrain.com/">https://thecodingtrain.com/</a>
+            </li>
+            <li>
+              Charts.js Documentation: <a href="https://www.chartjs.org/docs/latest/developers/api.html?q=">https://www.chartjs.org/docs/latest/developers/api.html?q=</a>
+            </li>
+          </ul>
+        </div>
       </div>
     
       <footer >
-        <div class="container-fluid p-3 " >
+        <div class="container-fluid p-3 bg-info " >
           
-            <div class="row">
+            <div class="row pb-0">
               <div class="col" >
-                <p id="footerText" class="text-info">&copy Richard Tomassetti 2021</p>
+                <p id="footerText" class="text-white">&copy Richard Tomassetti 2021</p>
               </div>
               <div class="col" >
                 <img id="stravaImg" src="img/download.png" alt="strava logo">
               </div>
               <div class="col" >.
-                <a id="footerText" class="text-info " href="acknowledgements.html">Acknowledgements</a>
+                <a id="footerText" class="text-white " href="acknowledgements.html">Acknowledgements</a>
               </div>
             </div>
           </div>
       </footer>
 
 
-<script>
 
-// function storageAvailable(type) {
-//     var storage;
-//     try {
-//         storage = window[type];
-//         var x = '__storage_test__';
-//         storage.setItem(x, x);
-//         storage.removeItem(x);
-//         return true;
-//     }
-//     catch(e) {
-//         return e instanceof DOMException && (
-//             // everything except Firefox
-//             e.code === 22 ||
-//             // Firefox
-//             e.code === 1014 ||
-//             // test name field too, because code might not be present
-//             // everything except Firefox
-//             e.name === 'QuotaExceededError' ||
-//             // Firefox
-//             e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-//             // acknowledge QuotaExceededError only if there's something already stored
-//             (storage && storage.length !== 0);
-//     }
-// }
 
-// if (storageAvailable('localStorage')) {
-//   console.log('Yippee! We can use localStorage awesomeness');
-// }
-// else {
-//   console.log("Shit we cannot use local storage")
-// }
-
-localStorage.setItem('athID', 33333);
-
-  const athleteId = localStorage.getItem('athID');
-
-  document.getElementById('AthID').innerText = athleteId
-
-</script>
-<script>
-  document.getElementById("signin").onclick = function() {myFunction()};
-  
-  function myFunction() {
-    window.location.href = "https://www.strava.com/oauth/authorize?clientid=";
-  }
-  </script>
 
 </body>
 

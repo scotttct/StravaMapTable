@@ -54,7 +54,11 @@ function getData(res){
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero: false
+                                callback: function(value, index, values) {
+                                    return value+" Watts";
+                            
+                                    beginAtZero: false;
+                                }
                             }
                         }]
                     }
