@@ -30,8 +30,6 @@ body{
 .footer {
     background-color: #5bc0de;
     color: white;
-   
-
 }
 
 .card-header {
@@ -40,6 +38,8 @@ body{
 }
 
 #chartContainer {
-    height: 400px;
-    width: 400px;
+    height: 300;
+    width: 600;
+    text-align: center;
+    
 }
