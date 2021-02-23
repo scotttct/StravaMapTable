@@ -31,7 +31,7 @@ function getAthlete(res){
     // localStorage.setItem("AthID", athleteID)
 
     var name =` ${data.firstname}  ${data.lastname}`
-     document.getElementById('Fname').innerHTML = "Athlete: " + name
+     document.getElementById('Fname').textContent = "Athlete: " + name
     console.log(name)
     
     var picSrc = ` ${data.profile}`
