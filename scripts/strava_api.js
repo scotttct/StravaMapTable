@@ -1,21 +1,20 @@
 
 const auth_link = "https://www.strava.com/oauth/token"
-var myArray = []
 
 function getActivites(res){
-
+    
     const activities_link = `https://www.strava.com/api/v3/athlete/activities?per_page=10&access_token=${res.access_token}`
     fetch(activities_link)
         .then((res) => res.json())
         .then(function (data){
-  
+            
             myArray = data 
+            
             console.log(myArray)
             buildTable(myArray)
             
-            
-            
-            
+        
+            //*******Create Map from json */
             var map = L.map('map').setView([27.0958592, -82.4344576], 10);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -54,7 +53,7 @@ function getActivites(res){
 
         //Get userID and set local storage 
         AthleID = `${data[0].athlete.id}`
-        localStorage.getItem("athID", AthleID)
+        localStorage.setItem("athID", AthleID)
         console.log(AthleID)
 
         var row = `<tr>
@@ -75,6 +74,7 @@ function getActivites(res){
 
     
 function reAuthorize() {
+    const client_id = 
     fetch(auth_link, {
         method: 'post',
 

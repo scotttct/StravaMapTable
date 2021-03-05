@@ -1,11 +1,24 @@
 const auth_link2 = "https://www.strava.com/oauth/token"
 let athData = [] 
-const athleteId = "290084"
-// var athleteId = localStorage.getItem("AthID")
 
-// function getAthleteId(res) {
-    
-// }
+const athleteId = localStorage.getItem("athID")
+console.log(athleteId)
+
+
+
+
+
+//get authentication config codes from config.json file and set to localStorage
+$.getJSON('config.json', function(jd) {
+    const clientid = jd.CLIENT_ID 
+    localStorage.setItem("client_id", clientid)
+    console.log(clientid)
+    const clientsecret = jd.CLIENT_SECRET
+    localStorage.setItem("client_secret", clientsecret) 
+    const refreshtoken = jd.REFRESH_TOKEN 
+    localStorage.setItem("refresh_token")
+
+ });
 
 
 function getAthlete(res){
@@ -43,6 +56,7 @@ function getAthlete(res){
 
     
 function reAuthorize() {
+
     fetch(auth_link2, {
         method: 'post',
 
@@ -51,6 +65,11 @@ function reAuthorize() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+
+            // client_id: localStorage.getItem("client_id"),
+            // client_secret: localStorage.getItem("client_secret"),
+            // refresh_token: localStorage.getItem("refresh_token"),
+            // grant_type: 'refresh_token'
 
             client_id: '44242',
             client_secret: '469a81b5bfb679b8576db8607d2054d3c3b698eb',
