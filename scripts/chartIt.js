@@ -21,13 +21,14 @@ function getData(res){
             console.log(myArray.map(actData => actData.name))
             console.log(myArray.map(actWatts => actWatts.average_watts))
             console.log(myArray.map(actWatts => actWatts.average_cadence))
+            console.log(myArray.map(actWatts => actWatts.average_speed))
             var ctx = document.getElementById('myChart');
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: myArray.map(actName => actName.name),
                     datasets: [{
-                        label: 'Average Watts per ride',
+                        label: 'Average Watts',
                         data: myArray.map(actWatts => actWatts.average_watts),
                         backgroundColor: [
                             'rgba(66, 227, 245, 0.2)',
@@ -47,7 +48,7 @@ function getData(res){
                         ],
                         borderWidth: 3
                     }, {
-                        label: 'Average Cadence per ride',
+                        label: 'Average Cadence',
                         data: myArray.map(actWatts => actWatts.average_cadence),
                         backgroundColor: [
                             'rgba(255, 206, 86, 0.2)',
@@ -67,7 +68,53 @@ function getData(res){
                         ],
                         borderWidth: 3
 
-                    }]
+                    },
+                    {
+                        label: 'Average Speed',
+                        data: myArray.map(actWatts => actWatts.average_speed),
+                        backgroundColor: [
+                            'rgba(102, 0, 102, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(66, 227, 245, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(102, 0, 102, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(35, 134, 145, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 3
+
+                    },
+                    {
+                        label: 'Average Heartrate',
+                        data: myArray.map(actWatts => actWatts.average_heartrate),
+                        backgroundColor: [
+                            'rgba(255, 0, 0, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(66, 227, 245, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 0, 0, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(35, 134, 145, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 3
+
+                    },
+                    
+                ]
                 },
                 options: {
                     scales: {
